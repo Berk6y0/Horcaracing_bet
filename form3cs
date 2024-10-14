@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Media;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static WinFormsApp1.Form1;
+namespace WinFormsApp1
+{
+     
+    public partial class Form3 : Form
+    {
+       public static Player winner =new Player("","");
+        public Form3()
+        {
+            InitializeComponent();
+          
+        }
+      
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (Control rb in groupBox1.Controls)
+            {
+                if (((RadioButton)rb).Checked)
+                {
+
+                    label2.Text = rb.Text;
+                    winner.Name = label2.Text;
+                    winner.Score = textBox1.Text;
+                }
+
+            }
+
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
