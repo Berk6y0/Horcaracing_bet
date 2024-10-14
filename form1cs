@@ -1,0 +1,146 @@
+using System.Collections;
+using static WinFormsApp1.Form1;
+
+namespace WinFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+
+        }
+        int player1distance, player2distance, player3distance, player4distance, player5distance;
+        static Random r = new Random();
+
+        int seconds = 0;
+        Form2 form2 = new Form2();
+        Form3 form3 = new Form3();
+
+        public static List<Player> players = new List<Player>();
+        public class Player
+        {
+
+            public string Name { get; set; }
+            public String Score { get; set; }
+
+            public Player(string name, String score)
+            {
+                Name = name;
+                Score = score;
+            }
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            player1distance = pictureBox1.Left;
+            player2distance = pictureBox2.Left;
+            player3distance = pictureBox3.Left;
+            player4distance = pictureBox4.Left;
+            player5distance = pictureBox5.Left;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+
+
+            seconds++;
+            int playerfirstwidth = pictureBox1.Width;
+            int playersecondtwidth = pictureBox2.Width;
+            int playerthirdwidth = pictureBox3.Width;
+            int playerfourthwidth = pictureBox4.Width;
+            int playerfifthidth = pictureBox5.Width;
+            int finishdistance = label7.Left + label7.Width;
+
+            pictureBox1.Left = pictureBox1.Left + r.Next(5, 16);
+            pictureBox2.Left = pictureBox2.Left + r.Next(5, 16);
+            pictureBox3.Left = pictureBox3.Left + r.Next(5, 16);
+            pictureBox4.Left = pictureBox4.Left + r.Next(5, 16);
+            pictureBox5.Left = pictureBox5.Left + r.Next(5, 16);
+
+
+
+
+
+
+
+            if (playerfirstwidth + pictureBox1.Left >= finishdistance && pictureBox1.Left < 2000)
+            {
+
+
+                String zaman1 = seconds.ToString();
+                Player player1 = new Player("player1", zaman1);
+                players.Add(player1);
+                form2.textBox1.Text = zaman1.ToString();
+                pictureBox1.Left = 2000;
+            }
+
+            if (playersecondtwidth + pictureBox2.Left >= finishdistance && pictureBox2.Left < 2000)
+            {
+
+                String zaman2 = seconds.ToString();
+                form2.textBox2.Text = zaman2.ToString();
+                Player player2 = new Player("player2", zaman2);
+                players.Add(player2);
+                pictureBox2.Left = 2000;
+
+            }
+            if (playerthirdwidth + pictureBox3.Left >= finishdistance && pictureBox3.Left < 2000)
+            {
+
+                String zaman3 = seconds.ToString();
+                form2.textBox3.Text = zaman3.ToString();
+                Player player3 = new Player("player3", zaman3);
+                players.Add(player3);
+                pictureBox3.Left = 2000;
+
+            }
+            if (playerfourthwidth + pictureBox4.Left >= finishdistance && pictureBox4.Left < 2000)
+            {
+
+                String zaman4 = seconds.ToString();
+                form2.textBox4.Text = zaman4.ToString();
+                Player player4 = new Player("player4", zaman4);
+                players.Add(player4);
+                pictureBox4.Left = 2000;
+
+            }
+            if (playerfifthidth + pictureBox5.Left >= finishdistance && pictureBox5.Left < 2000)
+            {
+
+                String zaman5 = seconds.ToString();
+                form2.textBox5.Text = zaman5.ToString();
+                Player player5 = new Player("player5", zaman5);
+                players.Add(player5);
+                pictureBox5.Left = 2000;
+
+            }
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+
+            form2.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            form3.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
