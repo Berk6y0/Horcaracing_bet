@@ -1,0 +1,129 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static WinFormsApp1.Form1;
+
+namespace WinFormsApp1
+{
+    public partial class Form2 : Form
+    {
+     
+        public Form2()
+        {
+            InitializeComponent();
+           
+
+
+
+        }
+    
+        public void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+            int num1 = int.Parse(textBox1.Text);
+            int num2 = int.Parse(textBox2.Text);
+            int num3 = int.Parse(textBox3.Text);
+            int num4 = int.Parse(textBox4.Text);
+            int num5 = int.Parse(textBox5.Text);
+
+
+            int max = Math.Min(num1, Math.Min(num2, Math.Min(num3, Math.Min(num4, num5))));
+            textBox6.Text = "Players with a score of " + max.ToString() + " won";
+
+        }
+
+        public void label2_Click_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int num1 = int.Parse(textBox1.Text);
+            int num2 = int.Parse(textBox2.Text);
+            int num3 = int.Parse(textBox3.Text);
+            int num4 = int.Parse(textBox4.Text);
+            int num5 = int.Parse(textBox5.Text);
+            int min = Math.Min(num1, Math.Min(num2, Math.Min(num3, Math.Min(num4, num5))));
+           foreach (Player T in Form1.players)
+            {
+                if (T.Name.Equals(Form3.winner.Name) && min == int.Parse(T.Score))
+                {
+                    int k = int.Parse(Form3.winner.Score) * 5;
+                    Form2.label9.Text = k.ToString();
+
+                }
+             
+
+
+
+            }
+
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_4(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
+
